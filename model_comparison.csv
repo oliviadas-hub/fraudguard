@@ -1,0 +1,4 @@
+Model,ROC-AUC,PR-AUC,Precision,Recall,Threshold
+Gradient Boosting,0.9142,0.537,0.565,0.727,0.919
+Random Forest,0.9074,0.5299,0.56,0.813,0.388
+Logistic Regression,0.9227,0.4527,0.555,0.773,0.767
