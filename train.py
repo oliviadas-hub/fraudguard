@@ -114,14 +114,6 @@ prec, rec, _ = precision_recall_curve(y_test, proba)
 step = max(len(prec) // 300, 1)
 pd.DataFrame({"recall": rec[::step], "precision": prec[::step]}).to_csv("pr_curve.csv", index=False)
 
-# ---------- Sample of scored transactions for the 3D explorer ----------
-viz = X_test.copy()
-viz["fraud_probability"] = proba.round(4)
-viz["actual_fraud"] = y_test.values
-frauds = viz[viz["actual_fraud"] == 1]                       # keep every fraud so it is visible
-legit = viz[viz["actual_fraud"] == 0].sample(2850, random_state=42)
-pd.concat([frauds, legit]).sample(frac=1, random_state=1).to_csv("viz_sample.csv", index=False)
-
 # ---------- Save everything the app needs ----------
 metrics = comparison.iloc[0].to_dict()
 joblib.dump({
@@ -131,4 +123,4 @@ joblib.dump({
 
 # Small sample file for testing the app's batch upload feature
 X_test.head(300).assign(actual_fraud=y_test.head(300).values).to_csv("sample_batch.csv", index=False)
-print("\nSaved model.joblib, model_comparison.csv, feature_importance.csv, pr_curve.csv, viz_sample.csv, sample_batch.csv")
+print("\nSaved model.joblib, model_comparison.csv, feature_importance.csv, pr_curve.csv, sample_batch.csv")
