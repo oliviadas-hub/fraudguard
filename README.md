@@ -2,7 +2,7 @@
 
 An end-to-end machine learning project: it trains and compares fraud models, explains each prediction, scores transactions in bulk, and estimates business impact, all in a live web app.
 
-**Live demo:** _add your Streamlit link here_
+**Live demo:** https://fraudguard-xmiewg9scqkzwjkfnrga9h.streamlit.app/
 
 ## Problem
 Fraud is ~1% of transactions, so accuracy is misleading (a model that always says "legit" is 99% accurate). This project handles the extreme class imbalance and tunes the decision threshold to balance caught fraud against false alarms.
